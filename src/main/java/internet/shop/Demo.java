@@ -9,7 +9,6 @@ public class Demo {
     private static Injector injector = Injector.getInstance("internet.shop");
 
     public static void main(String[] args) {
-        ManufacturerService manufacturerService = (ManufacturerService) injector.getInstance(ManufacturerService.class);
         Manufacturer manufacturer = new Manufacturer();
         Manufacturer manufacturer2 = new Manufacturer();
 
@@ -18,6 +17,9 @@ public class Demo {
 
         manufacturer2.setCountry("Germany");
         manufacturer2.setName("Ulder");
+
+        ManufacturerService manufacturerService = (ManufacturerService) injector
+                .getInstance(ManufacturerService.class);
 
         manufacturerService.create(manufacturer);
         manufacturerService.create(manufacturer2);
